@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  frontend:
+    build:
+      context: .
+    container_name: angular
+    command: npm start
+    ports:
+      - 4200:4200
+    volumes:
+    - .:/var/www/html
+    - /var/www/html/node_modules
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
